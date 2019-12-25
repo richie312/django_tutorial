@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{{ message }}
+
+{{ user }}
+
+{{ user.is_authenticated }}
+{% if user.is_authenticated %}
+<h1>Hi! {{user}}, Good {{greet}}. The current hour of the day is {{time}}</h1>
+{% endif %}
+{% endblock %}
