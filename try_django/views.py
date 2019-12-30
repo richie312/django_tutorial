@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.template.loader import get_template
 from datetime import datetime
+from .forms import ContactForm
 
 def home_page(request):
 	my_msg = "Hello there..."
@@ -27,7 +28,12 @@ def about_page(request):
 	return render(request,"about.html",{"message": about})
 
 def contact_page(request):
-	return HttpResponse("<h1>This is a Django Tutorial Project contact_page</h1>")
+	template_name = "form.html"
+	form = ContactForm(request.POST or None)
+	if form.is_valid():
+		print(form.cleaned_data)
+	context = {"message":"Contact us","form": form}
+	return render(request,template_name,context)
 
 def example_page(request):
 	context = {"message":"Example"}
