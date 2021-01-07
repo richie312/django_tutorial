@@ -34,7 +34,7 @@ future==0.16.0
 idna==2.7
 jmespath==0.9.4
 jsonfield==2.0.2
-lxml==4.3.4
+lxml==4.6.2
 mysqlclient==1.4.2.post1
 numpy==1.16.4
 oauthlib==3.1.0
